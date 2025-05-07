@@ -4,6 +4,9 @@
 * Java 24
 * Spring Boot 3.5.0-SNAPSHOT
 
+## Notes:
+* At the following path you can find a video presentation of the task "src/main/java/com/kdob/jabs/task{#of the task}/result"
+
 ## Module #1 - Spring Boot
 
 ### Task 1 - Hello-world application
