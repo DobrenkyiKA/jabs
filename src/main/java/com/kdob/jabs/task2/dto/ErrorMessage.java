@@ -1,10 +1,10 @@
 package com.kdob.jabs.task2.dto;
 
-public class ErrorMessageDto {
+public class ErrorMessage {
     private String message;
     private String errorCode;
 
-    public ErrorMessageDto(final String message, final String errorCode) {
+    public ErrorMessage(final String message, final String errorCode) {
         this.message = message;
         this.errorCode = errorCode;
     }

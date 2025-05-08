@@ -1,10 +1,22 @@
-package com.kdob.jabs.task2.dto;
+package com.kdob.jabs.task2.dao;
 
-public class CreateCustomerResponseDto {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "customer")
+public class Customer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "email")
     private String email;
+    @Column(name = "age")
     private int age;
 
     public Long getId() {

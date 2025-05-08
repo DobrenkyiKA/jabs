@@ -1,6 +1,6 @@
 package com.kdob.jabs.task2.dto;
 
-public class UpdateCustomerResponseDto {
+public class CreateCustomerResponse {
     private Long id;
     private String firstName;
     private String lastName;

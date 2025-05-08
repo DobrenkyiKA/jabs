@@ -1,6 +1,6 @@
 package com.kdob.jabs.task2.dto;
 
-public class GetCustomerResponseDto {
+public class GetCustomerResponse {
 
     private long id;
     private String firstName;

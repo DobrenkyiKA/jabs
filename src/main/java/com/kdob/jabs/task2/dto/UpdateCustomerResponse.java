@@ -1,22 +1,10 @@
-package com.kdob.jabs.task2.dao;
+package com.kdob.jabs.task2.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "customer")
-public class CustomerDao {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UpdateCustomerResponse {
     private Long id;
-
-    @Column(name = "first_name")
     private String firstName;
-    @Column(name = "last_name")
     private String lastName;
-    @Column(name = "email")
     private String email;
-    @Column(name = "age")
     private int age;
 
     public Long getId() {
