@@ -1,19 +1,19 @@
 package com.kdob.jabs.task2.mapper;
 
-import com.kdob.jabs.task2.dao.CustomerDao;
+import com.kdob.jabs.task2.dao.Customer;
 import com.kdob.jabs.task2.dto.*;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface CustomerMapper {
 
-    CustomerDao toCustomerDao(CreateCustomerRequestDto dto);
+    Customer toCustomer(CreateCustomerRequest createCustomerRequest);
 
-    CreateCustomerResponseDto toCreateCustomerResponseDto(CustomerDao dao);
+    CreateCustomerResponse toCreateCustomerResponse(Customer customer);
 
-    GetCustomerResponseDto toGetCustomerResponseDto(CustomerDao dao);
+    GetCustomerResponse toGetCustomerResponse(Customer customer);
 
-    CustomerDao toCustomerDao(UpdateCustomerRequestDto dto);
+    Customer toCustomer(UpdateCustomerRequest updateCustomerRequest);
 
-    UpdateCustomerResponseDto toUpdateCustomerResponseDto(CustomerDao dao);
+    UpdateCustomerResponse toUpdateCustomerResponse(Customer customer);
 }

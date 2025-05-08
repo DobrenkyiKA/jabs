@@ -15,17 +15,17 @@ public class CustomerController {
     }
 
     @PostMapping
-    public CreateCustomerResponseDto createCustomer(@RequestBody final CreateCustomerRequestDto request) {
+    public CreateCustomerResponse createCustomer(@RequestBody final CreateCustomerRequest request) {
         return customerFacade.createCustomer(request);
     }
 
     @GetMapping(path = "/{id}")
-    public GetCustomerResponseDto getCustomer(@PathVariable final Long id) {
+    public GetCustomerResponse getCustomer(@PathVariable final Long id) {
         return customerFacade.getCustomer(id);
     }
 
     @PutMapping(path = "/{id}")
-    public UpdateCustomerResponseDto updateCustomer(@RequestBody final UpdateCustomerRequestDto request, @PathVariable final Long id) {
+    public UpdateCustomerResponse updateCustomer(@RequestBody final UpdateCustomerRequest request, @PathVariable final Long id) {
         return customerFacade.updateCustomer(request, id);
     }
 
