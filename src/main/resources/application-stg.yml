@@ -1,0 +1,17 @@
+spring:
+  # Database Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jabs_stg
+    username: stg_user
+    password: stg_password
+    driver-class-name: org.postgresql.Driver
+  
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect

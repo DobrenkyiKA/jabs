@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: jabs
+
+  # Set default profile to local if not specified
+  profiles:
+    active: stg
+#    active: dev
+#    active: local
+
+  # Security Configuration
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: self
+          jwk-set-uri: self
+
+# Logging for security debugging
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql: TRACE
+
