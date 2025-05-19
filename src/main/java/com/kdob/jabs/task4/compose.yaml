@@ -1,0 +1,24 @@
+services:
+  dev-mysql-db:
+    container_name: dev-mysql-db
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: "jabs_dev"
+      MYSQL_USER: "dev_user"
+      MYSQL_PASSWORD: "dev_password"
+      MYSQL_ROOT_PASSWORD: "root"
+    ports:
+      - "3306:3306"
+
+  stg-db-server:
+    container_name: stg-db-server
+    image: postgres:17-alpine3.21
+    restart: always
+    environment:
+      POSTGRES_DB: "jabs_stg"
+      POSTGRES_USER: "stg_user"
+      POSTGRES_PASSWORD: "stg_password"
+    ports:
+      - "5432:5432"
+
