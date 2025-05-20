@@ -4,9 +4,9 @@ spring:
 
   # Set default profile to local if not specified
   profiles:
-    active: stg
+#    active: stg
 #    active: dev
-#    active: local
+    active: local
 
   # Security Configuration
   security:
