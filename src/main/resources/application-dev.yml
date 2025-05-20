@@ -1,17 +1,24 @@
 spring:
   # Database Configuration
   datasource:
-    url: jdbc:mysql://localhost:3306/jabs_dev
-    username: dev_user
-    password: dev_password
+    url: jdbc:mysql://localhost:3306/jabs
+    username: username
+    password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
-  
+
   # JPA Configuration
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     show-sql: true
     properties:
       hibernate:
         format_sql: true
     database-platform: org.hibernate.dialect.MySQLDialect
+
+  # Flyway Configuration
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    validate-on-migrate: true
