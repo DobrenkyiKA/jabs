@@ -2,6 +2,9 @@ package com.kdob.jabs.task2.controller;
 
 import com.kdob.jabs.task2.dto.*;
 import com.kdob.jabs.task2.facade.CustomerFacade;
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
+import jakarta.annotation.PostConstruct;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,14 +13,20 @@ import org.springframework.web.bind.annotation.*;
 public class CustomerController {
 
     private final CustomerFacade customerFacade;
+    private final Counter createCustomerCounter;
 
-    public CustomerController(final CustomerFacade customerFacade) {
+    public CustomerController(final CustomerFacade customerFacade,
+                              final MeterRegistry meterRegistry) {
         this.customerFacade = customerFacade;
+        createCustomerCounter = Counter.builder("create_customer_counter")
+                .description("Number of 'Create customer' requests")
+                .register(meterRegistry);
     }
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
     public CreateCustomerResponse createCustomer(@RequestBody final CreateCustomerRequest request) {
+        createCustomerCounter.increment();
         return customerFacade.createCustomer(request);
     }
 
