@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: jabs
+
+  # Set default profile to local if not specified
+  profiles:
+#    active: stg
+#    active: dev
+    active: local
+
+  # Security Configuration
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: self
+          jwk-set-uri: self
+
+# Logging for security debugging
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql: TRACE
+
+management:
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+    beans:
+      cache:
+        time-to-live: "1s"
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#      path-mapping:
+#        health: random-health
