@@ -23,3 +23,18 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql: TRACE
 
+management:
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+    beans:
+      cache:
+        time-to-live: "1s"
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#      path-mapping:
+#        health: random-health
