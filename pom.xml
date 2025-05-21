@@ -89,6 +89,17 @@
             <scope>test</scope>
         </dependency>
 
+    <!--Observation:-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <version>1.15.0</version>
+        </dependency>
+
     <!--Other dependencies:-->
         <dependency>
             <groupId>org.mapstruct</groupId>
@@ -100,6 +111,7 @@
             <artifactId>mapstruct-processor</artifactId>
             <version>1.6.3</version>
         </dependency>
+
     </dependencies>
 
 <!--Plugins:-->
